@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Misoftware — Soluções Digitais & Segurança</title>
+  <meta name="description" content="MISoftware — Hospedagem, criação de sites e testes de penetração. Infraestrutura segura e suporte 24/7.">
+  <style>
+    :root{
+      --bg:#071017; /* muito escuro */
+      --card:#0d1920;
+      --accent-1:#00e5a8; /* verde cibernético */
+      --accent-2:#00c2ff; /* azul cibernético */
+      --muted:#9fb3bd;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --maxw:1100px;
+      --mono: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--mono);
+      background:linear-gradient(180deg, #031218 0%, #071017 60%);
+      color:#dfeff2;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding-bottom:60px;
+    }
+
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+    /* HEADER */
+    header{
+      padding:20px 0 10px;
+      display:flex;align-items:center;gap:18px;justify-content:space-between;
+    }
+    .brand{display:flex;align-items:center;gap:16px}
+    .brand img{height:60px}
+    .brand .title{font-size:20px;font-weight:700;color:var(--accent-2);letter-spacing:1px}
+    .brand .tag{font-size:12px;color:var(--muted);margin-top:3px}
+
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px}
+    nav a:hover{color:var(--accent-1);background:rgba(255,255,255,0.02)}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;padding:40px 0}
+    .hero .visual{position:relative;border-radius:var(--radius);overflow:hidden;min-height:320px;box-shadow:0 10px 30px rgba(0,0,0,0.6);}
+    .hero .visual::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(3,26,22,0.6) 0%, rgba(0,34,60,0.2) 100%)}
+    .hero .visual img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero h1{font-size:48px;margin:0 0 12px;color:linear-gradient(var(--accent-1),var(--accent-2));}
+    .hero p{color:var(--muted);font-size:18px;margin:0 0 18px}
+    .cta{display:flex;gap:12px}
+    .btn{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#041014;border:none;padding:12px 18px;border-radius:10px;font-weight:700;cursor:pointer}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* SERVICES */
+    .services{display:flex;gap:18px;margin-top:30px}
+    .card{background:var(--card);padding:20px;border-radius:12px;flex:1;box-shadow:0 6px 20px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.02)}
+    .card img{width:100%;height:140px;object-fit:cover;border-radius:10px;margin-bottom:12px}
+    .card h3{margin:0 0 8px;color:var(--accent-1)}
+    .card p{color:var(--muted);margin:0}
+
+    /* ABOUT + SETUP */
+    .about{display:flex;gap:30px;align-items:flex-start;padding:40px 0}
+    .about .text{flex:1}
+    .about .setup{flex:1;display:grid;grid-template-columns:1fr;gap:12px}
+    .setup .box{background:var(--glass);padding:14px;border-radius:10px;border:1px dashed rgba(0,0,0,0.2);color:var(--muted)}
+
+    /* TEAM */
+    .team{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}
+    .member{width:220px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));border-radius:12px;padding:12px;text-align:center;border:1px solid rgba(255,255,255,0.02)}
+    .member img{width:100%;height:190px;object-fit:cover;border-radius:10px;margin-bottom:10px}
+    .member h4{margin:0;color:var(--accent-2)}
+    .member p{color:var(--muted);margin:6px 0 0;font-size:14px}
+
+    /* CONTACT */
+    .contact{background:linear-gradient(90deg, rgba(0,34,60,0.25), rgba(3,26,22,0.25));padding:28px;border-radius:12px;margin-top:36px;border:1px solid rgba(255,255,255,0.03)}
+    .contact a{color:var(--accent-1);text-decoration:none;font-weight:700}
+
+    /* FOOTER */
+    footer{margin-top:50px;padding:30px 0;color:var(--muted)}
+    footer .cols{display:flex;gap:30px;justify-content:center;flex-wrap:wrap}
+    footer h5{color:var(--accent-2);margin-bottom:8px}
+    footer a{color:var(--muted);text-decoration:none}
+
+    /* RESPONSIVE */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .brand .title{font-size:18px}
+      .hero h1{font-size:34px}
+      .services{flex-direction:column}
+      .about{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <!-- logo local -->
+        <img src="images/logo.png" alt="MISoftware Logo">
+        <div>
+          <div class="title">Misoftware</div>
+          <div class="tag">Secure. Smart. Simple.</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#home">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#team">Equipe</a>
+        <a href="#contact">Contactos</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="visual" aria-hidden="true">
+        <!-- imagem hero externa pronta para buscar na internet -->
+        <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=8e6f4d8f1d5b7a5c7f3f5b9a1d3c9f5e" alt="Servidor e segurança"/>
+      </div>
+
+      <div>
+        <h1>Hospedagem de Sites • Desenvolvimento • Segurança Online • </h1>
+        <p>Da infraestrutura à proteção: hospedagem confiável, sites profissionais e testes de penetração executados por especialistas.</p>
+        <div class="cta">
+          <a class="btn" href="contato.html">Fale Connosco</a>
+          <a class="btn" href="planos.html">Ver Planos</a>
+
+        </div>
+
+        <div class="services" style="margin-top:22px">
+          <!-- cards com imagens externas (vai buscar da internet) -->
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQkL7sqHUNXxyjv1aAdch8mKyQzTl68aFqMQ&s" alt="Hospedagem">
+            <h3>Hospedagem Web</h3>
+            <p>Servidores otimizados, backups e suporte 24/7 para manter os seus serviços online.</p>
+          </div>
+
+          <div class="card">
+            <img src="data:image/jpeg;base64,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" alt="Criação de sites">
+            <h3>Criação de Sites</h3>
+            <p>Websites responsivos e lojas online com foco em conversão e performance.</p>
+          </div>
+
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmOtS3C_OjbZ7amp9JG74BqixP1Ob96ZUo9w&s" alt="Testes de penetração">
+            <h3>Testes de Penetração</h3>
+            <p>Avaliações de segurança (pentests) para identificar vulnerabilidades e mitigar riscos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE + SETUP -->
+    <section class="about" id="sobre">
+      <div class="text">
+        <h2 style="color:var(--accent-2);margin-bottom:8px">Sobre a MISoftware</h2>
+        <p style="color:var(--muted);max-width:720px">A MISoftware combina infraestrutura moderna, desenvolvimento web profissional e competências de cibersegurança para oferecer um pacote completo de soluções digitais. Atuamos com transparência, melhores práticas e foco na proteção dos dados dos nossos clientes.</p>
+
+        <div style="margin-top:22px" class="team-quick">
+          <!-- mini destaques -->
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+            <div style="background:var(--card);padding:12px;border-radius:10px;color:var(--muted);min-width:160px">99.9% Uptime</div>
+            <div style="background:var(--card);padding:12px;border-radius:10px;color:var(--muted);min-width:160px">Backups Diários</div>
+            <div style="background:var(--card);padding:12px;border-radius:10px;color:var(--muted);min-width:160px">Suporte 24/7</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setup">
+        <div class="box">
+          <h4 style="margin:0;color:var(--accent-1)">Servidores Dedicados & Cloud</h4>
+          <p style="color:var(--muted);margin-top:8px">Hardware moderno, rede redundante e opções de VPS, cloud e servidores dedicados conforme a sua necessidade.</p>
+        </div>
+        <div class="box">
+          <h4 style="margin:0;color:var(--accent-1)">Segurança e Conformidade</h4>
+          <p style="color:var(--muted);margin-top:8px">Proteção DDoS, firewall de aplicação, certificação SSL e políticas de backup e recuperação.</p>
+        </div>
+        <div class="box">
+          <h4 style="margin:0;color:var(--accent-1)">Consultoria & Pentest</h4>
+          <p style="color:var(--muted);margin-top:8px">Testes de penetração manuais e automatizados, análise de risco e correção de vulnerabilidades.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM (imagens locais: só os executivos estão no teu PC) -->
+    <section id="team" style="padding-top:8px">
+      <h2 style="color:var(--accent-2);margin-bottom:12px">Nossa Equipa</h2>
+      <div class="team">
+        <div class="member">
+          <img src="images/team1.png" alt="João Silva">
+          <h4>Miguel Vasco</h4>
+          <p>CEO</p>
+        </div>
+
+        <div class="member">
+          <img src="images/team2.png" alt="Mariana Costa">
+          <h4>Nerú Shine</h4>
+          <p>CO-Fundador</p>
+        </div>
+
+        <div class="member">
+          <img src="images/team3.png" alt="Carlos Pereira">
+          <h4>Kyce Relves</h4>
+          <p>Gestor de Operações</p>
+        </div>
+
+        <div class="member">
+          <img src="images/team4.png" alt="Sofia Andrade">
+          <h4>Sofia Andrade</h4>
+          <p>Diretora de Segurança</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="wrap" style="padding:0">
+        <h2 style="color:var(--accent-2);margin-bottom:10px">Contactos</h2>
+        <p style="color:var(--muted);margin-bottom:6px">Email: <a href="mailto:info@misoftware.com">info@misoftware.com</a></p>
+        <p style="color:var(--muted);margin-bottom:6px">Telefone: <a href="tel:+244948317617">+244 948 317 617</a></p>
+        <p style="color:var(--muted);margin-bottom:6px">Endereço: Rua Talatona 123 — Luanda, Angola</p>
+
+        <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn" href="https://wa.me/+244948317617" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn ghost" href="mailto:info@misoftware.com">Enviar Email</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="cols">
+        <div>
+          <h5>Empresa</h5>
+          <a href="#sobre">Quem Somos</a><br>
+          <a href="#servicos">Serviços</a>
+        </div>
+        <div>
+          <h5>Suporte</h5>
+          <a href="#Contactos">Contato</a><br>
+          <a href="#">Central de Ajuda</a>
+        </div>
+        <div>
+          <h5>Siga-nos</h5>
+          <a href="#">LinkedIn</a><br>
+          <a href="#">Twitter</a>
+        </div>
+      </div>
+
+      <div class="footer-note">Precisa de ajuda?</div>
+      <a href="https://wa.me/948317617" target="_blank" class="float-whatsapp" aria-label="Abrir WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+      </a>
+
+      <div style="margin-top:18px;color:var(--muted);font-size:13px">&copy; 2025 Misoftware — Todos os direitos reservados. Criador do site, NS</div>
+    </footer>
+  </div>
+
+  <!-- SUGESTÕES DE IMAGENS LOCAIS/REMOTAS -->
+  <!-- Coloque na pasta 'images' estes ficheiros locais: logo.png, team1.png, team2.png, team3.png, team4.png -->
+  <!-- As restantes imagens (hero e serviços) estão apontadas para imagens públicas do Unsplash e pode trocar os links conforme preferir -->
+
+</body>
+</html>
